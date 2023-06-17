@@ -23,14 +23,12 @@ public class CatTest {
         String actual = cat.getSound();
         Assert.assertEquals("Мяу", actual);
     }
+
     @Test
     public void testGetFood() throws Exception{
         cat = new Cat(feline);
         Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> actual = cat.getFood();
         Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"), actual);
-
-
     }
-
 }
