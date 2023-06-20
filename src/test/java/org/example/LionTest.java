@@ -30,4 +30,20 @@ public class LionTest {
         List<String> actualFood = lion.getFood();
         assertEquals(List.of("Животные","Птицы", "Рыба"), actualFood);
     }
+
+    @Test
+    public void createLionMale()throws Exception{
+        Lion lion = new Lion("Самец", feline);
+        boolean expected = true;
+        boolean actual = lion.doesHaveMane();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void createLionFemale()throws Exception{
+        Lion lion = new Lion("Самка", feline);
+        boolean expected = false;
+        boolean actual = lion.doesHaveMane();
+        assertEquals(expected, actual);
+    }
 }

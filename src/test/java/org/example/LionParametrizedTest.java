@@ -21,8 +21,8 @@ public class LionParametrizedTest {
     @Parameterized.Parameters(name = "Гендер. Тестовые данные: {0}")
     public static Object[][] createParametrsOfLion() {
         return new Object[][]{
-                {"Самец", true},
-                {"Самка", false},
+                {"Собака", true},
+                {"null", false},
                 {"Львенок", false},
         };
     }
@@ -31,7 +31,7 @@ public class LionParametrizedTest {
     Feline feline;
 
     @Test
-    public void testCreateLion(){
+    public void testCreateFailLion(){
         try {
             Lion lion = new Lion(sex, feline);
             assertEquals(expectedResult, lion.doesHaveMane());
